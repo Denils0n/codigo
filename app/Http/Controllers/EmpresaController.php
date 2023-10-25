@@ -6,6 +6,8 @@ use App\Models\Empresa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Redirect;
+
 
 class EmpresaController extends Controller
 {
@@ -75,6 +77,8 @@ class EmpresaController extends Controller
     {
 
         $empresa->update($request->all());
+
+        return Redirect::route('dashboard');
 
 
     }

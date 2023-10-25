@@ -3,7 +3,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.vue";
 import {  Head, useForm} from "@inertiajs/vue3";
 
-defineProps({
+const dado = defineProps({
 
     empresas:{
         type:Object,
@@ -18,8 +18,8 @@ defineProps({
 const createForm = useForm({
 
 
-    nome: nome,
-    cnpj: cnpj,
+    nome: "",
+    cnpj: ""
 
 
 })
@@ -27,6 +27,7 @@ const createForm = useForm({
 const update = (empresas) => {
 
     createForm.put(
+
 
         route('empresa.update', empresas)
 
